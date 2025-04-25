@@ -1,0 +1,266 @@
+ /* Start Variables */
+ :root {
+     --main-color: #10cab7;
+     --sec-color: #2c4755;
+     --main-padding: 60px;
+     --main-color-background: #f6f6f6;
+ }
+
+ /* End Variables */
+
+ /* Start Global Rules */
+ * {
+     box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+ }
+
+ body {
+     font-family: "Work Sans", sans-serif;
+     background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjA3fDB8MHxzZWFyY2h8Mnx8Y2hpbGRyZW4lMjBlZHVjYXRpb258ZW58MHx8MHx8&ixlib=rb-4.0.3&q=80&w=1080');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     height: 100vh;
+     margin: 0;
+ }
+
+ .container {
+     padding-left: 15px;
+     padding-right: 15px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ /* Small */
+ @media (min-width: 480px) {
+     .container {
+         width: 450px;
+     }
+ }
+
+ /* Medium */
+ @media (min-width: 992px) {
+     .container {
+         width: 970px;
+     }
+ }
+
+ /* Large */
+ @media (min-width: 1200px) {
+     .container {
+         width: 1170px;
+     }
+ }
+
+ /* End Global Rules */
+ /* Start Components */
+ .special-heading {
+     color: #ebeced;
+     font-size: 100px;
+     text-align: center;
+     font-weight: 800;
+     letter-spacing: -3px;
+     margin: 0;
+ }
+
+ .special-heading+p {
+     margin: -30px 0 0;
+     font-size: 20px;
+     text-align: center;
+ }
+
+ @media (max-width: 767px) {
+     .special-heading {
+         font-size: 60px;
+     }
+
+     .special-heading+p {
+         margin-top: -20px;
+         font-size: 15px;
+     }
+ }
+
+ /* End Components */
+ /* Start Header */
+ .header {
+     padding: 20px;
+     background-color: white;
+ }
+
+ .header .container {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ .header .logo {
+     width: 50px;
+     height: 50px;
+ }
+
+ .header .links {
+     position: relative;
+ }
+
+ .header .links .icon {
+     width: 30px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: flex-end;
+ }
+
+ .header .links .icon span {
+     background-color: #333;
+     margin-bottom: 5px;
+     height: 2px;
+ }
+
+ .header .links .icon span:first-child {
+     width: 100%;
+ }
+
+ .header .links .icon span:nth-child(2) {
+     width: 50%;
+     transition: 0.3s;
+ }
+
+ .header .links .icon span:last-child {
+     width: 100%;
+ }
+
+ .header .links .icon:hover span:nth-child(2) {
+     width: 100%;
+ }
+
+ .header .links ul {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+     background-color: #eee;
+     position: absolute;
+     right: 0;
+     min-width: 200px;
+     top: calc(100% + 15px);
+     display: none;
+     z-index: 1;
+ }
+
+ .header .links:hover ul {
+     display: block;
+ }
+
+ .header .links ul::before {
+     content: "";
+     border: 10px solid;
+     border-color: transparent transparent #eee transparent;
+     position: absolute;
+     right: 5px;
+     top: -18px;
+ }
+
+ .header .links ul li a {
+     display: block;
+     padding: 10px;
+     text-decoration: none;
+     color: #333;
+     transition: 0.3s;
+ }
+
+ .header .links ul li a:hover {
+     padding-left: 5px;
+ }
+
+ .header .links ul li:not(:last-child) a {
+     border-bottom: 1px solid #ddd;
+ }
+
+ /* End Header */
+ /* Start Form Login */
+ /* Container for the form */
+ .login-container {
+     background: white;
+     padding: 2rem;
+     border-radius: 12px;
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+     width: 320px;
+     animation: fadeIn 0.8s ease-in-out;
+ }
+
+ /* Title */
+ .lgn {
+     margin-top: 100px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .login-container h2 {
+     text-align: center;
+     margin-bottom: 1.5rem;
+     color: #333;
+ }
+
+ .login_form {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ /* Form labels */
+ .login-container label {
+     display: block;
+     margin-bottom: 0.3rem;
+     font-weight: bold;
+     color: #555;
+ }
+
+ /* Input fields */
+ .login-container input[type="email"],
+ .login-container input[type="password"] {
+     width: 100%;
+     padding: 10px 12px;
+     margin-bottom: 1rem;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     transition: border-color 0.3s ease;
+ }
+
+ .login-container input[type="email"]:focus,
+ .login-container input[type="password"]:focus {
+     border-color: #4CAF50;
+     outline: none;
+ }
+
+ /* Button */
+ .login-container button {
+     width: 100%;
+     padding: 12px;
+     background-color: #4CAF50;
+     border: none;
+     color: white;
+     font-size: 16px;
+     font-weight: bold;
+     border-radius: 8px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+ }
+
+ .login-container button:hover {
+     background-color: #45a049;
+ }
+
+ /* Fade in animation */
+ @keyframes fadeIn {
+     from {
+         opacity: 0;
+         transform: translateY(10px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ /* Start Form Login */
