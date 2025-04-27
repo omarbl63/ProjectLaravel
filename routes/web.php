@@ -10,9 +10,12 @@ use App\Http\Controllers\TopicController;
 |--------------------------------------------------------------------------
 */
 
+
 Route::get('/login', [AdminLoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AdminLoginController::class, 'login'])->name('admin.login.submit');
 Route::post('/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,8 +39,8 @@ Route::get('/topics', [TopicController::class, 'index'])->name('topics.index');
 */
 
 Route::get('/admin/dashboard', function () {
-    return view('admin_dashboard');
-})->name('admin_dashboard')->middleware(['auth', 'admin']);
+    return view('layouts.admin');
+})->name('admin')->middleware(['auth', 'admin']);
 
 
 
@@ -51,3 +54,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('/admin/topics/{topic}', [TopicController::class, 'update'])->name('admin.topics.update');
     Route::delete('/admin/topics/{topic}', [TopicController::class, 'destroy'])->name('admin.topics.destroy');
 });
+
+
+
+// Route for to filter by category
+
+Route::get('/categories/{category}', [TopicController::class, 'showByCategory'])->name('topics.byCategory');
